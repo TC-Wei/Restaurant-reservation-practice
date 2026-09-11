@@ -1,9 +1,24 @@
 * {
   box-sizing: border-box;
 }
+.topText {
+  text-align: center;
+  margin-bottom: 40px;
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 img {
-  width: 100%;
-  height: 600px;
+  max-width: 100%;
+  height: auto;
+}
+.topImg {
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  @media screen and (max-width: 768px) {
+    aspect-ratio: 4/3;
+  }
 }
 .hero {
   position: relative;
@@ -12,7 +27,7 @@ img {
   position: absolute;
   display: flex;
   left: 10px;
-  top: 550px;
+  bottom: 10px;
   gap: 10px;
 }
 .tab-bar a {
@@ -23,6 +38,9 @@ img {
 
   padding: 10px 10px;
   transition: all 0.3s ease;
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
 }
 .tab-bar a.active {
   box-shadow: inset 0 -4px 0 #ba5b29;
@@ -36,8 +54,10 @@ img {
   justify-content: space-between;
 }
 .Row button {
+  color: #000;
+  font-size: clamp(16px, 1.5vw, 20px); /*「最小 / 理想 / 最大」*/
   width: 100%;
-  height: 40px;
+  height: 44px; /*最低限制*/
   border-radius: 6px;
   cursor: pointer;
 }
@@ -48,6 +68,11 @@ img {
   display: flex;
   justify-content: space-between;
   gap: 40px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
 }
 .branch-info > div:first-child {
   flex: 2;

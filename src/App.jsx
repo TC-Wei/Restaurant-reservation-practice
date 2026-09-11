@@ -67,6 +67,7 @@ function App() {
             ${reservedTime}`;
   return (
     <div>
+      <h1 className="topText">松風鍋物預約</h1>
       <header>
         <div className="navbar">
           <h2>松風鍋物</h2>
@@ -77,7 +78,7 @@ function App() {
       <main>
         <div className="hero">
           <div>
-            <img src={img3} alt="image" />
+            <img className="topImg" src={img3} alt="image" />
           </div>
           <div className="tab-bar">
             <a
@@ -181,9 +182,9 @@ function App() {
                 <div>用餐時段</div>
                 <Divider>中午</Divider>
                 <div>
-                  <Row gutter={[20, 20]}>
+                  <Row gutter={[{ xs: 8, md: 20 }, 20]}>
                     {noonReserve.map((time) => (
-                      <Col key={time} xs={4}>
+                      <Col key={time} xs={6} md={4}>
                         <button
                           className={reservedTime === time ? "active" : ""}
                           onClick={() => setReservedTime(time)}
@@ -196,9 +197,9 @@ function App() {
                 </div>
                 <Divider>下午</Divider>
                 <div>
-                  <Row gutter={[20, 20]}>
+                  <Row gutter={[{ xs: 8, md: 20 }, 20]}>
                     {pmReserve.map((time) => (
-                      <Col key={time} xs={4}>
+                      <Col key={time} xs={6} md={4}>
                         <button
                           className={reservedTime === time ? "active" : ""}
                           onClick={() => setReservedTime(time)}
@@ -211,9 +212,9 @@ function App() {
                 </div>
                 <Divider>晚上</Divider>
                 <div>
-                  <Row gutter={[20, 20]}>
+                  <Row gutter={[{ xs: 8, md: 20 }, 20]}>
                     {nightReserve.map((time) => (
-                      <Col key={time} xs={4}>
+                      <Col key={time} xs={6} md={4}>
                         <button
                           className={reservedTime === time ? "active" : ""}
                           onClick={() => setReservedTime(time)}
@@ -277,7 +278,7 @@ function App() {
           </div>
         </div>
         <div className="reserve">
-          <div>{bottomReserve}</div>
+          {tab === "booking" && <div>{bottomReserve}</div>}
           <button className="reserveBtn" disabled={reservedTime === ""}>
             {reservedTime === "" ? "請選擇用餐時段" : "預約"}
           </button>
