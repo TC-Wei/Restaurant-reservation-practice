@@ -108,7 +108,7 @@ img {
   filter: brightness(1.1); /* 變亮 10% */
 }
 footer {
-  padding-bottom: 80px;
+  padding-bottom: 120px;
   text-align: center;
 }
 .ant-divider-inner-text {

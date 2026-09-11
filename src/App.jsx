@@ -61,6 +61,10 @@ function App() {
   const [adult, setAdult] = useState(2);
   const [kid, setKid] = useState(0);
   const [date, setDate] = useState(dayjs());
+  /*訂位摘要，即時顯示人數、日期、時段*/
+  const bottomReserve = `松風鍋物訂位資訊 ${adult}位大人,${kid}位小孩，預定時間
+            ${date.format(dateFormat)}${reservedTime === "" ? "" : "，用餐時段"}
+            ${reservedTime}`;
   return (
     <div>
       <header>
@@ -273,6 +277,7 @@ function App() {
           </div>
         </div>
         <div className="reserve">
+          <div>{bottomReserve}</div>
           <button className="reserveBtn" disabled={reservedTime === ""}>
             {reservedTime === "" ? "請選擇用餐時段" : "預約"}
           </button>
