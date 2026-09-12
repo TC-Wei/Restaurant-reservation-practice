@@ -52,7 +52,26 @@ const nightReserve = [
   "19:30",
   "19:45",
 ];
-
+const parkingLots = [
+  {
+    name: "安平古堡停車場",
+    distance: "1km",
+    fee: "50元/小時",
+    map: "https://maps.app.goo.gl/xT8hoY93gBYkpxSd6",
+  },
+  {
+    name: "安億停車場",
+    distance: "1.5km",
+    fee: "50元/小時",
+    map: "https://maps.app.goo.gl/rZAvLKhzzDGMq2PR7",
+  },
+  {
+    name: "漁人碼頭停車場",
+    distance: "2km",
+    fee: "40元/小時",
+    map: "https://maps.app.goo.gl/gPU7WYNN82yMz5zk7",
+  },
+];
 function App() {
   const [tab, setTab] = useState("booking");
 
@@ -91,13 +110,13 @@ function App() {
               我要訂位
             </a>
             <a
-              className={tab === "order" ? "active" : ""}
+              className={tab === "parking" ? "active" : ""}
               onClick={() => {
-                setTab("order");
+                setTab("parking");
               }}
               href="#!"
             >
-              點餐
+              停車場位置
             </a>
           </div>
         </div>
@@ -265,47 +284,37 @@ function App() {
               </div>
               <Divider />
             </div>
+
+            <div>
+              <div>
+                <h4>菜單</h4>
+              </div>
+              <div className="branch-menu">
+                <img className="menu-img" src={img4} alt="宣傳圖" />
+                <img className="menu-img" src={img2} alt="menu" />
+                <img className="menu-img" src={img1} alt="menu" />
+              </div>
+            </div>
+            <div className="reserve">
+              <div>{bottomReserve}</div>
+              <button className="reserveBtn" disabled={reservedTime === ""}>
+                {reservedTime === "" ? "請選擇用餐時段" : "預約"}
+              </button>
+            </div>
+            <Divider />
           </>
         )}
-        <div>
-          <div>
-            <h4>菜單</h4>
-          </div>
-          <div className="branch-menu">
-            <img className="menu-img" src={img4} alt="宣傳圖" />
-            <img className="menu-img" src={img2} alt="menu" />
-            <img className="menu-img" src={img1} alt="menu" />
-          </div>
-        </div>
-        <div className="reserve">
-          {tab === "booking" && <div>{bottomReserve}</div>}
-          <button className="reserveBtn" disabled={reservedTime === ""}>
-            {reservedTime === "" ? "請選擇用餐時段" : "預約"}
-          </button>
-        </div>
-        <Divider />
-        {tab === "order" && (
+        {tab === "parking" && (
           <>
+            <h4>停車場</h4>
+            <h5>點擊名稱進行導航</h5>
             <div>
-              <div>火鍋</div>
-              <div>
-                <div>品項</div>
-                <div>品項</div>
-              </div>
-            </div>
-            <div>
-              <div>壽喜燒火鍋</div>
-              <div>
-                <div>品項</div>
-                <div>品項</div>
-              </div>
-            </div>
-            <div>
-              <div>麻辣火鍋</div>
-              <div>
-                <div>品項</div>
-                <div>品項</div>
-              </div>
+              {parkingLots.map((park) => (
+                <div key={park.name}>
+                  <a href={park.map}>{park.name}</a>
+                  距離 {park.distance} 收費方式 {park.fee}
+                </div>
+              ))}
             </div>
             <Divider />
           </>

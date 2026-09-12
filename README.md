@@ -2,6 +2,8 @@
 
 ## Demo
 
+https://restaurant-reservation-practice.vercel.app/
+
 ## 功能
 
 - 提供了營業時段、地圖、聯絡電話、菜單、注意事項
