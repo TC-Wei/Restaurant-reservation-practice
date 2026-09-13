@@ -132,6 +132,41 @@ img {
 .reserveBtn:hover:enabled {
   filter: brightness(1.1); /* 變亮 10% */
 }
+label {
+  margin-top: 10px;
+  display: block;
+}
+.redStay::before {
+  content: "*";
+  color: red;
+  margin-right: 4px;
+}
+.split {
+  display: flex;
+  gap: 40px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+.split > div:first-child {
+  flex: 3;
+}
+.split > div:last-child {
+  flex: 2;
+}
+.submitBtn {
+  display: block;
+  margin: 20px auto;
+}
+.success {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+}
+.error {
+  color: red;
+}
 footer {
   padding-bottom: 120px;
   text-align: center;
