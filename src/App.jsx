@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import TimeSlots from "./components/TimeSlots";
 import img1 from "./img/img1.jpg";
 import img2 from "./img/img2.jpg";
 import img3 from "./img/img3.jpg";
@@ -273,51 +274,24 @@ function App() {
                   </div>
                   <div className="Row">
                     <div>用餐時段</div>
-                    <Divider>中午</Divider>
-                    <div>
-                      <Row gutter={[{ xs: 8, md: 20 }, 20]}>
-                        {noonReserve.map((time) => (
-                          <Col key={time} xs={6} md={4}>
-                            <button
-                              className={reservedTime === time ? "active" : ""}
-                              onClick={() => setReservedTime(time)}
-                            >
-                              {time}
-                            </button>
-                          </Col>
-                        ))}
-                      </Row>
-                    </div>
-                    <Divider>下午</Divider>
-                    <div>
-                      <Row gutter={[{ xs: 8, md: 20 }, 20]}>
-                        {pmReserve.map((time) => (
-                          <Col key={time} xs={6} md={4}>
-                            <button
-                              className={reservedTime === time ? "active" : ""}
-                              onClick={() => setReservedTime(time)}
-                            >
-                              {time}
-                            </button>
-                          </Col>
-                        ))}
-                      </Row>
-                    </div>
-                    <Divider>晚上</Divider>
-                    <div>
-                      <Row gutter={[{ xs: 8, md: 20 }, 20]}>
-                        {nightReserve.map((time) => (
-                          <Col key={time} xs={6} md={4}>
-                            <button
-                              className={reservedTime === time ? "active" : ""}
-                              onClick={() => setReservedTime(time)}
-                            >
-                              {time}
-                            </button>
-                          </Col>
-                        ))}
-                      </Row>
-                    </div>
+                    <TimeSlots
+                      title="中午"
+                      times={noonReserve}
+                      selected={reservedTime}
+                      onSelect={setReservedTime}
+                    />
+                    <TimeSlots
+                      title="下午"
+                      times={pmReserve}
+                      selected={reservedTime}
+                      onSelect={setReservedTime}
+                    />
+                    <TimeSlots
+                      title="晚上"
+                      times={nightReserve}
+                      selected={reservedTime}
+                      onSelect={setReservedTime}
+                    />
                   </div>
                   <div>
                     <h4>定位以外需求請撥打</h4>
