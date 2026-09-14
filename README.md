@@ -32,7 +32,7 @@ React 19、Vite、CSS、Ant Design(antd)、dayjs
 
 ## 說明
 
-參考 inline 訂位系統的流程實作，店家與圖片皆為虛構
+參考 inline 訂位系統的流程實作，店家為虛構。圖片來源：Unsplash（免費授權）、Canva AI 生成
 
 ## 未實作
 
