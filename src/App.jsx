@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import TimeSlots from "./components/TimeSlots";
+import ParkingList from "./components/ParkingList";
 import img1 from "./img/img1.jpg";
 import img2 from "./img/img2.jpg";
 import img3 from "./img/img3.jpg";
@@ -451,17 +452,7 @@ function App() {
         )}
         {tab === "parking" && (
           <>
-            <h4>停車場</h4>
-            <h5>點擊名稱進行導航</h5>
-            <div>
-              {parkingLots.map((park) => (
-                <div key={park.name}>
-                  <a href={park.map}>{park.name}</a>
-                  距離 {park.distance} 收費方式 {park.fee}
-                </div>
-              ))}
-            </div>
-            <Divider />
+            <ParkingList lots={parkingLots} />
           </>
         )}
       </main>
