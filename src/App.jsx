@@ -109,6 +109,7 @@ function App() {
   return (
     <div>
       <h1 className="topText">松風鍋物預約</h1>
+      <Divider />
       <header>
         <div className="navbar">
           <h2>松風鍋物</h2>
