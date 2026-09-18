@@ -41,3 +41,43 @@ React 19、Vite、CSS、Ant Design(antd)、dayjs
 - 手機 / Email 真偽驗證（需簡訊、信件驗證服務）
 
 - 已訂時段的即時查詢
+
+---
+
+## English
+
+### Demo
+
+https://restaurant-reservation-practice.vercel.app/
+
+### Features
+
+#### Restaurant info
+
+- Business hours, address, phone number, map, menu (horizontal scroll)
+- Nearby parking list — click to open in Google Maps
+
+#### Reservation flow
+
+- Select the number of guests, date, and time slot. A summary bar at the bottom updates in real time. Options that would exceed 6 people (adults + children) are automatically disabled.
+- Contact form: name, phone, and terms are required; email and notes are optional.
+- Phone number must be 10 digits starting with 09; errors show instantly.
+- Three-step flow: select date & time → contact info → done
+
+#### Responsive layout
+
+- Automatic switching between desktop and mobile layouts
+
+### Tech Stack
+
+- React 19, Vite, CSS, Ant Design (antd), dayjs
+
+### Notes
+
+- Flow modeled after inline's reservation system; the restaurant is fictional.
+
+### Not Implemented
+
+- Backend integration: Currently, the data only exists on the frontend; sending it will not actually create a reservation
+- Mobile phone/email verification (requires SMS/email verification service)
+- Real-time availability check
