@@ -112,7 +112,7 @@ function App() {
       <header>
         <div className="navbar">
           <h2>松風鍋物</h2>
-          <button>中文</button>
+          <span>中文</span>
         </div>
         <Divider />
       </header>
