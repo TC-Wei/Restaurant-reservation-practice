@@ -120,7 +120,7 @@ function App() {
       <main>
         <div className="hero">
           <div>
-            <img className="topImg" src={img3} alt="image" />
+            <img className="topImg" src={img3} alt="桌上一鍋肉片蔬菜火鍋" />
           </div>
           <div className="tab-bar">
             <a
@@ -340,9 +340,21 @@ function App() {
                     <h4>菜單</h4>
                   </div>
                   <div className="branch-menu">
-                    <img className="menu-img" src={img4} alt="宣傳圖" />
-                    <img className="menu-img" src={img2} alt="menu" />
-                    <img className="menu-img" src={img1} alt="menu" />
+                    <img
+                      className="menu-img"
+                      src={img4}
+                      alt="松風鍋物品牌形象"
+                    />
+                    <img
+                      className="menu-img"
+                      src={img2}
+                      alt="泡麵鍋，鋪滿茼蒿與肉片"
+                    />
+                    <img
+                      className="menu-img"
+                      src={img1}
+                      alt="新鮮肉片與菇類食材"
+                    />
                   </div>
                 </div>
                 <div className="reserve">
@@ -361,7 +373,7 @@ function App() {
               <>
                 <div className="split">
                   <div>
-                    <img src={img3} alt="image" />
+                    <img src={img3} alt="" />
                   </div>
                   <div>
                     <label className="redStay">姓名</label>
