@@ -6,23 +6,16 @@ import img1 from "./img/img1.jpg";
 import img2 from "./img/img2.jpg";
 import img3 from "./img/img3.jpg";
 import img4 from "./img/img4.jpg";
-import {
-  Divider,
-  Col,
-  Row,
-  Select,
-  Space,
-  DatePicker,
-  Button,
-  message,
-  Input,
-  Checkbox,
-} from "antd";
+import { Divider, Col, Row, Select, DatePicker, Input, Checkbox } from "antd";
 import { FacebookFilled, InstagramFilled } from "@ant-design/icons";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
 const dateFormat = "YYYY-MM-DD";
+/*通用資訊*/
+const address = "台南市安平區國勝路";
+const storePhone = "06-0000000";
+/*預約時間 */
 const noonReserve = [
   "11:00",
   "11:15",
@@ -69,21 +62,24 @@ const nightReserve = [
 const parkingLots = [
   {
     name: "安平古堡停車場",
-    distance: "1km",
-    fee: "50元/小時",
+    distance: "400m",
+    fee: "40元/小時 當日最高 250元",
     map: "https://maps.app.goo.gl/xT8hoY93gBYkpxSd6",
+    carLimit: "車輛限制：全面禁止大型車（大客車等）進入停放",
   },
   {
     name: "安億停車場",
-    distance: "1.5km",
-    fee: "50元/小時",
+    distance: "1.1km",
+    fee: "40元/小時",
     map: "https://maps.app.goo.gl/rZAvLKhzzDGMq2PR7",
+    carLimit: "車輛限制：全面禁止大型車（大客車等）進入停放",
   },
   {
     name: "漁人碼頭停車場",
-    distance: "2km",
+    distance: "800m",
     fee: "40元/小時",
     map: "https://maps.app.goo.gl/gPU7WYNN82yMz5zk7",
+    carLimit: "車輛限制：全面禁止大型車（大客車等）進入停放",
   },
 ];
 function App() {
@@ -147,10 +143,10 @@ function App() {
         <div>
           <div>
             <div>松風鍋物</div>
-            <div>台南市安平區中華西路</div>
+            <div>{address}</div>
           </div>
           <div>
-            <div>電話 06-000000</div>
+            <div>電話 {storePhone}</div>
             <div>地圖 查看地圖</div>
           </div>
         </div>
@@ -297,7 +293,7 @@ function App() {
                   </div>
                   <div>
                     <h4>定位以外需求請撥打</h4>
-                    <p>電話 06-000000</p>
+                    <p>電話 {storePhone}</p>
                   </div>
                   <Divider />
                   <div>
@@ -315,11 +311,11 @@ function App() {
                       <div>
                         <div>
                           <div>位置</div>
-                          <p>台南市安平區中華西路</p>
+                          <p>{address}</p>
                         </div>
                         <div>
                           <div>電話</div>
-                          <p>06-000000</p>
+                          <p>{storePhone}</p>
                         </div>
                         <div>
                           <div>營業時間</div>
@@ -473,7 +469,9 @@ function App() {
       <footer>
         <section>
           <p>版權:© 2026 松風鍋物 All Rights Reserved.</p>
-          <p>電話 06-000000、地址 台南市安平區中華西路</p>
+          <p>
+            電話 {storePhone}、地址 {address}
+          </p>
           <span>
             <FacebookFilled />
           </span>
