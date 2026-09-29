@@ -1,4 +1,4 @@
-# 松風火鍋網頁預約
+# 松風鍋物網頁預約
 
 ## Demo
 
@@ -14,7 +14,7 @@ https://restaurant-reservation-practice.vercel.app/
 
 ### 訂位流程
 
-- 選擇人數、日期、用餐時段，底部摘要列即時顯示，大人 + 小孩合計超過 6人 的選項會自動變灰、點不下去。
+- 選擇人數、日期、用餐時段，底部摘要列即時顯示，大人 + 小孩合計超過6人的選項會自動變灰、點不下去。
 
 - 填寫聯絡資料：姓名、電話、條款必填，Email、備註選填
 
@@ -75,6 +75,7 @@ https://restaurant-reservation-practice.vercel.app/
 ### Notes
 
 - Flow modeled after inline's reservation system; the restaurant is fictional.
+- Images: Unsplash (free license), Canva AI generated.
 
 ### Not Implemented
 
