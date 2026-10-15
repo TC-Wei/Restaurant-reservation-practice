@@ -292,7 +292,7 @@ function App() {
                     />
                   </div>
                   <div>
-                    <h4>定位以外需求請撥打</h4>
+                    <h4>訂位以外需求請撥打</h4>
                     <p>電話 {storePhone}</p>
                   </div>
                   <Divider />
@@ -397,7 +397,7 @@ function App() {
                       placeholder="請輸入E-mail"
                       onChange={(e) => setEmail(e.target.value)}
                     />
-                    <label>備注</label>
+                    <label>備註</label>
                     <Input.TextArea
                       placeholder="如需其他問題，請輸入至這裡"
                       value={note}
