@@ -263,6 +263,10 @@ function App() {
                         <DatePicker
                           value={date}
                           allowClear={false}
+                          disabledDate={(current) =>
+                            current.isAfter(dayjs().add(30, "day")) ||
+                            current.isBefore(dayjs().startOf("day"))
+                          }
                           onChange={(value) =>
                             setDate(value)
                           } /*onChange是元件自己判斷「值真的定了」之後才呼叫*/
