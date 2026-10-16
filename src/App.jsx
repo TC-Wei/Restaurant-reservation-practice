@@ -99,7 +99,7 @@ function App() {
   const [agreed, setAgreed] = useState(false);
   /*訂位摘要，即時顯示人數、日期、時段*/
   const bottomReserve = `松風鍋物訂位資訊 ${adult}位大人,${kid}位小孩，預定時間
-            ${date.format(dateFormat)}${reservedTime === "" ? "" : "，用餐時段"}
+            ${date ? date.format(dateFormat) : "尚未選擇日期"}${reservedTime === "" ? "" : "，用餐時段"}
             ${reservedTime}`;
   const phoneValid = /^09\d{8}$/.test(phone);
   return (
@@ -262,6 +262,7 @@ function App() {
                       <Col xs={8}>
                         <DatePicker
                           value={date}
+                          allowClear={false}
                           onChange={(value) =>
                             setDate(value)
                           } /*onChange是元件自己判斷「值真的定了」之後才呼叫*/
