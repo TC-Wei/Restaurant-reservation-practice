@@ -267,9 +267,10 @@ function App() {
                             current.isAfter(dayjs().add(30, "day")) ||
                             current.isBefore(dayjs().startOf("day"))
                           }
-                          onChange={(value) =>
-                            setDate(value)
-                          } /*onChange是元件自己判斷「值真的定了」之後才呼叫*/
+                          onChange={(value) => {
+                            setDate(value);
+                            setReservedTime("");
+                          }} /*onChange是元件自己判斷「值真的定了」之後才呼叫*/
                           style={{ width: "90%" }}
                         />
                       </Col>
