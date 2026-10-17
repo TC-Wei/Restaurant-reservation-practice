@@ -282,18 +282,21 @@ function App() {
                       times={noonReserve}
                       selected={reservedTime}
                       onSelect={setReservedTime}
+                      date={date}
                     />
                     <TimeSlots
                       title="下午"
                       times={pmReserve}
                       selected={reservedTime}
                       onSelect={setReservedTime}
+                      date={date}
                     />
                     <TimeSlots
                       title="晚上"
                       times={nightReserve}
                       selected={reservedTime}
                       onSelect={setReservedTime}
+                      date={date}
                     />
                   </div>
                   <div>
