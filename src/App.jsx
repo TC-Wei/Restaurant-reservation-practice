@@ -102,6 +102,7 @@ function App() {
             ${date ? date.format(dateFormat) : "尚未選擇日期"}${reservedTime === "" ? "" : "，用餐時段"}
             ${reservedTime}`;
   const phoneValid = /^09\d{8}$/.test(phone);
+  const emailValid = email.trim() === "" || /^\S+@\S+\.\S+$/.test(email.trim());
   return (
     <div>
       <h1 className="topText">松風鍋物預約</h1>
@@ -406,6 +407,13 @@ function App() {
                       placeholder="請輸入E-mail"
                       onChange={(e) => setEmail(e.target.value)}
                     />
+                    {!emailValid ? (
+                      <span className="error">
+                        格式錯誤，範例：name@gmail.com
+                      </span>
+                    ) : (
+                      ""
+                    )}
                     <label>備註</label>
                     <Input.TextArea
                       placeholder="如需其他問題，請輸入至這裡"
@@ -426,7 +434,8 @@ function App() {
                         name.trim() === "" ||
                         phone === "" ||
                         !agreed ||
-                        !phoneValid
+                        !phoneValid ||
+                        !emailValid
                       }
                       onClick={() => setStage("done")}
                     >
