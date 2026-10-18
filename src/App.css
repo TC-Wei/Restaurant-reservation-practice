@@ -64,6 +64,10 @@ img {
 .Row button.active {
   background: #ba5b29;
 }
+.Row button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
 .branch-info {
   display: flex;
   justify-content: space-between;
