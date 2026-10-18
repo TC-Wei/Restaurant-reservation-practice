@@ -392,6 +392,8 @@ function App() {
                     <Input
                       value={phone}
                       placeholder="請輸入電話"
+                      type="tel"
+                      maxLength={10}
                       onChange={(e) => setPhone(e.target.value)}
                       status={phone !== "" && !phoneValid ? "error" : ""}
                     />
