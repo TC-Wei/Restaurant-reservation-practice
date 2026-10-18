@@ -65,7 +65,9 @@ img {
   background: #ba5b29;
 }
 .Row button:disabled {
-  opacity: 0.4;
+  background: var(--border);
+  opacity: 0.7;
+  color: var(--text);
   cursor: not-allowed;
 }
 .branch-info {
