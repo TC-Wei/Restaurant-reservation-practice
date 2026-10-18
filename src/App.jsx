@@ -7,7 +7,6 @@ import img2 from "./img/img2.jpg";
 import img3 from "./img/img3.jpg";
 import img4 from "./img/img4.jpg";
 import { Divider, Col, Row, Select, DatePicker, Input, Checkbox } from "antd";
-import { FacebookFilled, InstagramFilled } from "@ant-design/icons";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
@@ -147,7 +146,15 @@ function App() {
           </div>
           <div>
             <div>電話 {storePhone}</div>
-            <div>地圖 查看地圖</div>
+            <div>
+              <a
+                href="https://maps.app.goo.gl/E6ZDA5Lf3X3ZXaYc7"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                查看地圖
+              </a>
+            </div>
           </div>
         </div>
         <Divider />

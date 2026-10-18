@@ -89,3 +89,12 @@ h2 {
 p {
   margin: 0;
 }
+a,
+a:visited {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+a:hover {
+  text-decoration: underline;
+}

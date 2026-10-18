@@ -8,7 +8,9 @@ function ParkingList(props) {
       <div>
         {props.lots.map((park) => (
           <div key={park.name}>
-            <a href={park.map}>{park.name}</a>
+            <a href={park.map} target="_blank" rel="noopener noreferrer">
+              {park.name}
+            </a>
             <ul>
               <li>距離 {park.distance}</li>
               <li>收費方式 {park.fee}</li>
