@@ -423,7 +423,10 @@ function App() {
                     <button
                       className="reserveBtn submitBtn"
                       disabled={
-                        name === "" || phone === "" || !agreed || !phoneValid
+                        name.trim() === "" ||
+                        phone === "" ||
+                        !agreed ||
+                        !phoneValid
                       }
                       onClick={() => setStage("done")}
                     >
