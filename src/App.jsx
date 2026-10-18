@@ -110,7 +110,6 @@ function App() {
       <header>
         <div className="navbar">
           <h2>松風鍋物</h2>
-          <span>中文</span>
         </div>
         <Divider />
       </header>
@@ -495,12 +494,6 @@ function App() {
           <p>
             電話 {storePhone}、地址 {address}
           </p>
-          <span>
-            <FacebookFilled />
-          </span>
-          <span>
-            <InstagramFilled />
-          </span>
         </section>
       </footer>
     </div>
