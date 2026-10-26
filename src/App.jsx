@@ -7,6 +7,7 @@ import img2 from "./img/img2.jpg";
 import img3 from "./img/img3.jpg";
 import img4 from "./img/img4.jpg";
 import { Divider, Col, Row, Select, DatePicker, Input, Checkbox } from "antd";
+import { supabase } from "./utils/supabase";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
@@ -102,6 +103,24 @@ function App() {
             ${reservedTime}`;
   const phoneValid = /^09\d{8}$/.test(phone);
   const emailValid = email.trim() === "" || /^\S+@\S+\.\S+$/.test(email.trim());
+  const handleReserve = async () => {
+    const { error } = await supabase.from("bookings").insert({
+      name: name,
+      phone: phone,
+      email: email,
+      date: date.format(dateFormat),
+      time: reservedTime,
+      adult: adult,
+      kid: kid,
+      note: note,
+      status: "booked",
+    });
+    if (error) {
+      console.error(error);
+      return;
+    }
+    setStage("done");
+  };
   return (
     <div>
       <h1 className="topText">松風鍋物預約</h1>
@@ -445,7 +464,7 @@ function App() {
                         !phoneValid ||
                         !emailValid
                       }
-                      onClick={() => setStage("done")}
+                      onClick={handleReserve}
                     >
                       {/* message.success(bottomReserve) */}
                       完成預約
