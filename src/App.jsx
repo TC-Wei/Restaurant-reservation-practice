@@ -15,6 +15,7 @@ import {
   Input,
   Checkbox,
   message,
+  Alert,
 } from "antd";
 import { supabase } from "./utils/supabase";
 import dayjs from "dayjs";
@@ -422,6 +423,11 @@ function App() {
                     <img src={img3} alt="" />
                   </div>
                   <div>
+                    <Alert
+                      type="warning"
+                      title="此為練習作品，請勿填寫真實個人資料"
+                      showIcon
+                    />
                     <label className="redStay">姓名</label>
                     <Input
                       value={name}
