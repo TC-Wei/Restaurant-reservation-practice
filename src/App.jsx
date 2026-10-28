@@ -6,7 +6,16 @@ import img1 from "./img/img1.jpg";
 import img2 from "./img/img2.jpg";
 import img3 from "./img/img3.jpg";
 import img4 from "./img/img4.jpg";
-import { Divider, Col, Row, Select, DatePicker, Input, Checkbox } from "antd";
+import {
+  Divider,
+  Col,
+  Row,
+  Select,
+  DatePicker,
+  Input,
+  Checkbox,
+  message,
+} from "antd";
 import { supabase } from "./utils/supabase";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
@@ -118,6 +127,11 @@ function App() {
     const { error } = await supabase.from("bookings").insert(newBooking);
     if (error) {
       console.error(error);
+      if (error.code === "23505") {
+        message.error("這天已經訂位過了，如需更改請來電 06-0000000");
+      } else {
+        message.error("訂位失敗，請稍後再試");
+      }
       return;
     }
     setStage("done");
