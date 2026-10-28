@@ -22,13 +22,23 @@ https://restaurant-reservation-practice.vercel.app/
 
 - 三階段：選日期時間 → 填寫聯絡資料 → 完成
 
+### 資料儲存（Supabase）
+
+- 送出後寫入 Supabase（PostgreSQL），店家可在[後台](https://songfeng-admin.vercel.app)查看與修改狀態
+
+- Row Level Security：客人只能新增訂位，無法讀取他人資料
+
+- 同一支電話同一天只能訂一筆（資料庫 unique index），重複時顯示提示
+
+- Email、備註未填時存為 NULL
+
 ### 響應式
 
 - 桌面 / 手機版面自動切換
 
 ## 技術棧
 
-React 19、Vite、CSS、Ant Design(antd)、dayjs
+React 19、Vite、CSS、Ant Design(antd)、dayjs、Supabase
 
 ## 說明
 
@@ -36,11 +46,13 @@ React 19、Vite、CSS、Ant Design(antd)、dayjs
 
 ## 未實作
 
-- 後端串接：目前資料僅存在前端，送出後不會實際建立訂位
-
 - 手機 / Email 真偽驗證（需簡訊、信件驗證服務）
 
 - 已訂時段的即時查詢
+
+- 送出按鈕防連點
+
+- 資料庫層的人數、日期檢查（目前只在前端檢查）
 
 ---
 
@@ -55,14 +67,26 @@ https://restaurant-reservation-practice.vercel.app/
 #### Restaurant info
 
 - Business hours, address, phone number, map, menu (horizontal scroll)
+
 - Nearby parking list — click to open in Google Maps
 
 #### Reservation flow
 
 - Select the number of guests, date, and time slot. A summary bar at the bottom updates in real time. Options that would exceed 6 people (adults + children) are automatically disabled.
+
 - Contact form: name, phone, and terms are required; email and notes are optional.
+
 - Phone number must be 10 digits starting with 09; errors show instantly.
+
 - Three-step flow: select date & time → contact info → done
+
+#### Data storage (Supabase)
+
+- Bookings are saved to Supabase (PostgreSQL). Staff can view and update them in the [admin page](https://songfeng-admin.vercel.app).
+
+- Row Level Security: customers can only create bookings and cannot read other people's data.
+
+- One booking per phone number per day (database unique index). A message shows if it is a duplicate.
 
 #### Responsive layout
 
@@ -70,15 +94,22 @@ https://restaurant-reservation-practice.vercel.app/
 
 ### Tech Stack
 
-- React 19, Vite, CSS, Ant Design (antd), dayjs
+- React 19, Vite, CSS, Ant Design (antd), dayjs, Supabase
 
 ### Notes
 
 - Flow modeled after inline's reservation system; the restaurant is fictional.
+
 - Images: Unsplash (free license), Canva AI generated.
 
 ### Not Implemented
 
-- Backend integration: Currently, the data only exists on the frontend; sending it will not actually create a reservation
 - Mobile phone/email verification (requires SMS/email verification service)
+
 - Real-time availability check
+
+- Prevent double-clicking the submit button
+
+- Database-level checks for guest count and date (currently checked only on the frontend)
+
+- Empty email and notes are saved as NULL.
