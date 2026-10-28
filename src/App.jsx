@@ -117,12 +117,12 @@ function App() {
     const newBooking = {
       name,
       phone,
-      email,
+      email: email.trim() || null,
       date: date.format(dateFormat),
       time: reservedTime,
       adult,
       kid,
-      note,
+      note: note.trim() || null,
       status: "booked",
     };
     const { error } = await supabase.from("bookings").insert(newBooking);
