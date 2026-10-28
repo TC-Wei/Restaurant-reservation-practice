@@ -104,17 +104,18 @@ function App() {
   const phoneValid = /^09\d{8}$/.test(phone);
   const emailValid = email.trim() === "" || /^\S+@\S+\.\S+$/.test(email.trim());
   const handleReserve = async () => {
-    const { error } = await supabase.from("bookings").insert({
-      name: name,
-      phone: phone,
-      email: email,
+    const newBooking = {
+      name,
+      phone,
+      email,
       date: date.format(dateFormat),
       time: reservedTime,
-      adult: adult,
-      kid: kid,
-      note: note,
+      adult,
+      kid,
+      note,
       status: "booked",
-    });
+    };
+    const { error } = await supabase.from("bookings").insert(newBooking);
     if (error) {
       console.error(error);
       return;
